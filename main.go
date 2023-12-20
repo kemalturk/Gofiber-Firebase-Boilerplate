@@ -24,8 +24,8 @@ func Start(addr string) error {
 	return app.Listen(addr)
 }
 
-// MyCloudFunction Exported http.HandlerFunc to be deployed to as a Cloud Function
-func MyCloudFunction(w http.ResponseWriter, r *http.Request) {
+// ServerFunction Exported http.HandlerFunc to be deployed to as a Cloud Function
+func ServerFunction(w http.ResponseWriter, r *http.Request) {
 	err := CloudFunctionRouteToFiber(app, w, r)
 	if err != nil {
 		fmt.Fprintf(w, "err : %v", err)
