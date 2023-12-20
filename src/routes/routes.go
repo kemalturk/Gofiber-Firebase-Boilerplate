@@ -16,10 +16,10 @@ func New() *Routes {
 	return &Routes{mainRepository: &repositories.MainRepository{DB: db}}
 }
 
-func (r *Routes) Setup(app *fiber.App) {
-	app.Post("message", r.insertMessage)
+func (self *Routes) Setup(app *fiber.App) {
+	app.Post("message", self.insertMessage)
 }
 
-func (r *Routes) insertMessage(c *fiber.Ctx) error {
+func (self *Routes) insertMessage(c *fiber.Ctx) error {
 	return c.SendString("ok")
 }
