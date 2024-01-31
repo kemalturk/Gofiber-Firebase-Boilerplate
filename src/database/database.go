@@ -11,15 +11,6 @@ import (
 	"google.golang.org/api/option"
 )
 
-type Config struct {
-	Host     string
-	Port     string
-	Password string
-	User     string
-	DBName   string
-	SSLMode  string
-}
-
 func NewConnection() *firestore.Client {
 
 	ctx := context.Background()
